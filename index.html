@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestra Historia</title>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loader inicial -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1>Cargando nuestra historia...</h1>
+        </div>
+    </div>
+
+    <!-- Portada -->
+    <section class="hero" id="hero">
+
+        <div class="hero-content">
+            <h1 class="title">
+                Nuestra historia no empezó por casualidad...
+            </h1>
+
+            <p class="subtitle">
+                Aquí comienza algo que quiero que recuerdes siempre.
+            </p>
+
+            <button id="startBtn">
+                Comenzar nuestra historia
+            </button>
+        </div>
+
+    </section>
+
+    <!-- Sección placeholder 1 -->
+<section class="section cream photo-section reveal">
+
+    <div class="violet-container"></div>
+
+    <div class="photo-container">
+
+        <img src="assets/image/foto1.jpg.jpeg" alt="Nuestra foto">
+
+    </div>
+
+    <div class="text-container">
+
+        <h2 class="section-title">
+            Aquí empezó algo especial
+        </h2>
+
+        <p class="section-text">
+            Aquí escribirás el texto largo que quieras dedicarle.
+            Puede ser un recuerdo, una emoción o algo que quieras que siempre tenga presente.
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- Sección placeholder 2 -->
+<section class="section dark photo-section-2 reveal">
+
+    <div class="violet-container"></div>
+
+    <div class="photo-container-2">
+        <img src="assets/image/foto2.jpg.jpeg" alt="Nuestra segunda foto">
+    </div>
+
+    <div class="text-container">
+        <h2 class="section-title-dark">
+            Contigo todo tomó sentido
+        </h2>
+
+        <p class="section-text-dark">
+            Aquí puedes escribir otro momento especial,
+            algo que marcó un antes y un después.
+        </p>
+    </div>
+
+</section>
+
+
+    <!-- Sección placeholder 3 -->
+
+<section class="section cream photo-section-3 reveal">
+
+    <div class="violet-container"></div>
+
+    <div class="polaroid">
+
+        <img src="assets/image/foto3.jpg.jpeg" alt="Recuerdo especial">
+
+        <div class="polaroid-caption">
+            Nuestro recuerdo favorito
+        </div>
+
+    </div>
+
+    <div class="text-container">
+        <h2 class="section-title">
+            Hay momentos que no se olvidan
+        </h2>
+
+        <p class="section-text">
+            Aquí puedes escribir algo más íntimo,
+            algo que te conecte emocionalmente con ese momento.
+        </p>
+    </div>
+
+</section>
+
+    <!-- Section final -->
+<section class="section final-section reveal">
+
+    <h2 class="final-title">
+        Y si volviera a empezar...
+    </h2>
+
+    <p class="final-text">
+        Te elegiría una y mil veces más.
+    </p>
+
+    <button id="surpriseBtn" class="surprise-button">
+        Descubrir algo más
+    </button>
+
+    <div id="surpriseMessage" class="hidden-message">
+        Gracias por cada momento, por cada sonrisa,
+        y por hacer que todo tenga sentido.
+    </div>
+
+    <!-- Contenedor lluvia -->
+    <div id="petal-container"></div>
+
+</section>
+
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("hero", {
+  "particles": {
+    "number": { "value": 40 },
+    "size": { "value": 2 },
+    "color": { "value": "#F1FAEE" },
+    "line_linked": { "enable": false },
+    "move": { "speed": 1 }
+  }
+});
+</script>
+
+
+</body>
+</html>

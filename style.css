@@ -1,0 +1,490 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografía base */
+body {
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+/* Loader */
+/* Loader */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #4A0E2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F1FAEE;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.loader-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Animación suave */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: #4A0E2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Canvas de partículas */
+#hero canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Contenido encima */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #F1FAEE; /* Forzamos color crema */
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #F1FAEE; /* Forzamos color crema */
+}
+
+
+button {
+    padding: 1rem 2.5rem;
+    border: none;
+    background: #A4161A;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+}
+button {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* Efecto brillo */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    background: #E5383B;
+}
+
+
+/* Secciones */
+.section {
+    padding: 5rem 2rem;
+}
+
+.cream {
+    background: #F1FAEE;
+    color: #1D3557;
+}
+
+.dark {
+    background: #4A0E2B;
+    color: #F1FAEE;
+}
+.title, .subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.5s ease;
+}
+
+.title.show, .subtitle.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.photo-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/* Contenedor foto */
+.photo-container {
+    margin-bottom: 2rem;
+}
+/* MARCO OFICIAL PARA TODAS LAS IMÁGENES */
+.photo-container img,
+.photo-container-2 img {
+    width: 280px;
+    max-width: 85%;
+    padding: 12px;
+    background: #F1FAEE;
+    border: 2px solid #F1FAEE;
+    border-radius: 10px;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.5),
+        0 0 20px rgba(229, 56, 59, 0.25);
+    animation: slowZoom 14s ease-in-out infinite alternate;
+    transition: transform 0.5s ease;
+}
+
+/* Hover uniforme */
+.photo-container img:hover,
+.photo-container-2 img:hover {
+    animation: none;
+    transform: scale(1.06);
+}
+
+/* Título sección */
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #A4161A;
+    margin-bottom: 1rem;
+}
+
+/* Texto sección */
+.section-text {
+    font-size: 1.2rem;
+    color: #1D3557;
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Responsive base */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .photo-container img {
+        width: 85%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+}
+@media (min-width: 1200px) {
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .photo-container img {
+        width: 350px;
+    }
+
+}
+.photo-section-2 {
+    background: #4A0E2B;
+    padding: 6rem 2rem 4rem 2rem;
+    text-align: center;
+}
+
+.photo-container-2 {
+    margin-bottom: 2rem;
+}
+
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.section-title-dark {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #F1FAEE;
+    margin-top: 2rem;
+}
+
+.section-text-dark {
+    font-size: 1.2rem;
+    color: #F1FAEE;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    text-align: center;
+}
+@media (max-width: 768px) {
+
+    .photo-container-2 img {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .section-title-dark {
+        font-size: 2rem;
+    }
+
+    .section-text-dark {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+}
+
+.photo-section-3 {
+    background: #F1FAEE;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.photo-section-3 .polaroid {
+    margin-top: 3rem;
+}
+
+
+
+.polaroid {
+    background: #F1FAEE;
+    padding: 15px 15px 50px 15px;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    transform: rotate(-2deg);
+    margin: 3rem auto;
+    max-width: 320px;
+    transition: transform 0.5s ease;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.polaroid-caption {
+    margin-top: 15px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: #A4161A;
+}
+@media (max-width: 768px) {
+
+    .photo-section-3 {
+        padding: 6rem 1.5rem;
+    }
+
+    .polaroid {
+        transform: rotate(-1deg);
+        max-width: 90%;
+    }
+
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1.4s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.photo-container,
+.photo-container-2,
+.polaroid {
+    position: relative;
+}
+
+/* Sección Final */
+.final-section {
+    background: #2C061F;
+    color: #F1FAEE;
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.final-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.surprise-button {
+    background: #A4161A;
+    color: #F1FAEE;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.surprise-button:hover {
+    transform: scale(1.05);
+    background: #C9184A;
+}
+
+.hidden-message {
+    opacity: 0;
+    transform: translateY(30px);
+    margin-top: 2rem;
+    transition: all 1.2s ease;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Lluvia de pétalos */
+#petal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url("assets/image/petalo.png");
+    background-size: cover;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.violet-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.section {
+    position: relative;
+}
+
+.violet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+
+    background-image: url("assets/image/violeta.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    animation: floatAround 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    100% {
+        transform: translate(8px, -10px) rotate(180deg);
+    }
+}
+
