@@ -152,20 +152,26 @@ const music = document.getElementById("bgMusic");
 
 startBtn.addEventListener("click", function () {
 
+    music.currentTime = 29; // 🔹 cambia este número por el segundo que quieras
+
     music.volume = 0;
     music.play();
 
     let volumen = 0;
 
     const fadeIn = setInterval(function () {
-        if (volumen < 1) {
-            volumen += 0.05;
+
+        if (volumen < 0.6) {   // 🔹 aquí defines el volumen máximo
+            volumen += 0.03;   // 🔹 velocidad de subida
             music.volume = volumen;
         } else {
             clearInterval(fadeIn);
         }
-    }, 200);
+
+    }, 200); // 🔹 velocidad del efecto (más pequeño = más rápido)
 
 });
+
+
 
 
