@@ -147,3 +147,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("bgMusic");
+
+startBtn.addEventListener("click", function () {
+
+    music.volume = 0;
+    music.play();
+
+    let volumen = 0;
+
+    const fadeIn = setInterval(function () {
+        if (volumen < 1) {
+            volumen += 0.05;
+            music.volume = volumen;
+        } else {
+            clearInterval(fadeIn);
+        }
+    }, 200);
+
+});
+
+
