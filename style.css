@@ -522,4 +522,18 @@ button:hover {
     }
 
 }
+#startBtn {
+    padding: 15px 45px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #a31222, #d7263d);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+}
 
